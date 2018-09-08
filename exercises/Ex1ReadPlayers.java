@@ -23,6 +23,7 @@ public class Ex1ReadPlayers {
     void program() {
         Player[] players = inputPlayers();
         outPlayers(players);
+        System.out.println("jifdls");
     }
 
     // This class captures the concept of a Player
