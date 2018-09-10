@@ -14,36 +14,54 @@ import static java.lang.System.out;
  *
  */
 public class Ex1ReadPlayers {
-    public static void main(String[] args) {
-        new Ex1ReadPlayers().program();
-    }
+	public static void main(String[] args) {
+		new Ex1ReadPlayers().program();
+	}
 
-    final Scanner sc = new Scanner(in);
+	final Scanner sc = new Scanner(in);
 
-    void program() {
-        Player[] players = inputPlayers();
-        outPlayers(players);
-        System.out.println("jifdls");
-    }
+	void program() {
+		Player[] players = inputPlayers();
+		outPlayers(players);
+	}
 
-    // This class captures the concept of a Player
-    class Player {
-        String name;   // A Player has a name and...
-        int points;    // ... and points
+	// This class captures the concept of a Player
+	class Player {
+		String name;   // A Player has a name and...
+		int points = 0;    // ... and points
+		
+		Player(String name){
+			this.name = name;
+		}
 
-        // TODO
-    }
+	}
 
-    // ---------- Methods -------------------
+	// ---------- Methods -------------------
 
-     Player[] inputPlayers() {
-       // TODO
-        return null;
-    }
+	Player[] inputPlayers() {
 
-    void outPlayers(Player[] players){
-       // TODO
-    }
+		System.out.println("How many players? >");
+		int nPlayers = sc.nextInt();
+		sc.nextLine();
+		Player[] players = new Player[nPlayers];
+		
+		for (int i = 0; i < players.length; i++) {
+			System.out.println("Name for player " + (i + 1) + " >");
+			players[i] = new Player(sc.nextLine());
+		}
+		
+		return players;
+	}
+	
+
+	void outPlayers(Player[] players){
+		
+		System.out.println("Players are:");
+		for (int i = 0; i < players.length; i++) {
+			System.out.println("Name " + players[i].name + " points " + players[i].points + " 0");
+		}
+		
+	}
 
 
 }
